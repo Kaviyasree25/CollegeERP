@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Login - CollegeERP</title>
+
+      {% load static %}
+
+    <!-- Bootstrap core CSS-->
+    <link href="{% static '/info/bootstrap/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+
+    <!-- Custom fonts for this template-->
+    <link href="{% static '/info/bootstrap/vendor/fontawesome-free/css/all.min.css' %}" rel="stylesheet" type="text/css">
+
+    <!-- Custom styles for this template-->
+    <link href="{% static '/info/bootstrap/css/sb-admin.css' %}" rel="stylesheet">
+
+    <!-- Modern UI Styles -->
+    <link href="{% static '/info/css/modern-ui.css' %}" rel="stylesheet">
+
+    <style>
+      body.bg-dark {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      
+      .login-container {
+        animation: fadeIn 0.6s ease-out;
+      }
+      
+      .card-login {
+        border-radius: 20px;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        overflow: hidden;
+        max-width: 450px;
+        width: 100%;
+      }
+      
+      .card-login .card-header {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        padding: 2rem;
+        text-align: center;
+        border: none;
+      }
+      
+      .card-login .card-header h3 {
+        margin: 0;
+        font-size: 2rem;
+        font-weight: 700;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+      }
+      
+      .card-login .card-body {
+        padding: 2.5rem;
+        background: white;
+      }
+      
+      .form-group {
+        margin-bottom: 1.5rem;
+        position: relative;
+      }
+      
+      .form-group label {
+        font-weight: 600;
+        color: #495057;
+        margin-bottom: 0.5rem;
+        display: block;
+      }
+      
+      .form-group i {
+        position: absolute;
+        left: 1rem;
+        top: 2.75rem;
+        color: #667eea;
+        transition: var(--transition-base);
+      }
+      
+      .form-control {
+        padding-left: 3rem;
+        border-radius: 10px;
+        border: 2px solid #e0e0e0;
+        transition: var(--transition-base);
+      }
+      
+      .form-control:focus {
+        border-color: #667eea;
+        box-shadow: 0 0 0 0.2rem rgba(102, 126, 234, 0.25);
+        transform: translateY(-2px);
+      }
+      
+      .form-control:focus + i,
+      .form-control:not(:placeholder-shown) + i {
+        color: #764ba2;
+        transform: scale(1.1);
+      }
+      
+      .btn-login {
+        width: 100%;
+        padding: 0.75rem;
+        font-size: 1.1rem;
+        font-weight: 600;
+        border-radius: 10px;
+        background: var(--primary-gradient);
+        border: none;
+        color: white;
+        transition: var(--transition-base);
+        box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+        margin-top: 1rem;
+      }
+      
+      .btn-login:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 6px 20px rgba(102, 126, 234, 0.5);
+      }
+      
+      .btn-login:active {
+        transform: translateY(-1px);
+      }
+      
+      .errorlist {
+        list-style: none;
+        padding: 0;
+        margin: 0.5rem 0;
+      }
+      
+      .errorlist li {
+        color: #dc3545;
+        font-size: 0.875rem;
+        padding: 0.5rem;
+        background: #f8d7da;
+        border-radius: 5px;
+        margin-bottom: 0.25rem;
+        animation: shake 0.5s;
+      }
+      
+      @keyframes shake {
+        0%, 100% { transform: translateX(0); }
+        25% { transform: translateX(-10px); }
+        75% { transform: translateX(10px); }
+      }
+      
+      .help-text {
+        font-size: 0.875rem;
+        color: #6c757d;
+        margin-top: 0.25rem;
+      }
+      
+      .alert {
+        border-radius: 10px;
+        margin-bottom: 1.5rem;
+        animation: slideIn 0.5s ease-out;
+      }
+      
+      @keyframes slideIn {
+        from {
+          opacity: 0;
+          transform: translateY(-20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      
+      .login-icon {
+        font-size: 4rem;
+        margin-bottom: 1rem;
+        animation: bounce 2s infinite;
+      }
+      
+      @keyframes bounce {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-10px); }
+      }
+    </style>
+
+  </head>
+
+  <body class="bg-dark">
+
+    <div class="container login-container">
+      <div class="card card-login mx-auto">
+        <div class="card-header">
+          <i class="fas fa-graduation-cap login-icon"></i>
+          <h3>CollegeERP</h3>
+          <p class="mb-0" style="opacity: 0.9;">Welcome Back!</p>
+        </div>
+        <div class="card-body">
+          {% if messages %}
+            {% for message in messages %}
+              <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+                {{ message }}
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+            {% endfor %}
+          {% endif %}
+          
+          <form method="post" id="loginForm">
+            {% csrf_token %}
+            
+            <div class="form-group">
+              <label for="{{ form.username.id_for_label }}">
+                <i class="fas fa-user"></i> {{ form.username.label }}
+              </label>
+              <div class="position-relative">
+                <input 
+                  type="text" 
+                  name="{{ form.username.name }}" 
+                  id="{{ form.username.id_for_label }}"
+                  class="form-control" 
+                  placeholder="Enter your full name"
+                  required
+                  autofocus
+                  value="{{ form.username.value|default:'' }}"
+                >
+                <i class="fas fa-user"></i>
+              </div>
+              {% if form.username.help_text %}
+                <small class="help-text">{{ form.username.help_text }}</small>
+              {% endif %}
+              {% if form.username.errors %}
+                <ul class="errorlist">
+                  {% for error in form.username.errors %}
+                    <li>{{ error }}</li>
+                  {% endfor %}
+                </ul>
+              {% endif %}
+            </div>
+
+            <div class="form-group">
+              <label for="{{ form.password.id_for_label }}">
+                <i class="fas fa-lock"></i> {{ form.password.label }}
+              </label>
+              <div class="position-relative">
+                <input 
+                  type="password" 
+                  name="{{ form.password.name }}" 
+                  id="{{ form.password.id_for_label }}"
+                  class="form-control" 
+                  placeholder="Enter your password"
+                  required
+                >
+                <i class="fas fa-lock"></i>
+              </div>
+              {% if form.password.errors %}
+                <ul class="errorlist">
+                  {% for error in form.password.errors %}
+                    <li>{{ error }}</li>
+                  {% endfor %}
+                </ul>
+              {% endif %}
+            </div>
+
+            {% if form.non_field_errors %}
+              <div class="alert alert-danger">
+                {% for error in form.non_field_errors %}
+                  {{ error }}
+                {% endfor %}
+              </div>
+            {% endif %}
+
+            <button type="submit" class="btn btn-login">
+              <i class="fas fa-sign-in-alt mr-2"></i>Login
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="{% static '/info/bootstrap/vendor/jquery/jquery.min.js' %}"></script>
+    <script src="{% static '/info/bootstrap/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="{% static '/info/bootstrap/vendor/jquery-easing/jquery.easing.min.js' %}"></script>
+    
+    <script>
+      // Add interactive effects
+      $(document).ready(function() {
+        // Add focus animations
+        $('.form-control').on('focus', function() {
+          $(this).parent().addClass('focused');
+        }).on('blur', function() {
+          if ($(this).val() === '') {
+            $(this).parent().removeClass('focused');
+          }
+        });
+        
+        // Form submission animation
+        $('#loginForm').on('submit', function() {
+          $('.btn-login').html('<i class="fas fa-spinner fa-spin mr-2"></i>Logging in...');
+          $('.btn-login').prop('disabled', true);
+        });
+      });
+    </script>
+
+  </body>
+
+</html>

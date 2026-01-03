@@ -1,0 +1,564 @@
+/* Modern UI Styles for College ERP */
+
+/* ============================================
+   Color Palette & Variables
+   ============================================ */
+:root {
+  --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  --secondary-gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  --success-gradient: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+  --dark-gradient: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+  --light-gradient: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1), 0 4px 6px rgba(0, 0, 0, 0.05);
+  --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.15), 0 10px 10px rgba(0, 0, 0, 0.04);
+  --transition-base: all 0.3s ease;
+  --transition-fast: all 0.15s ease;
+  --transition-slow: all 0.5s ease;
+}
+
+/* ============================================
+   Global Enhancements
+   ============================================ */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  transition: var(--transition-base);
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  min-height: 100vh;
+}
+
+/* ============================================
+   Navbar Enhancements
+   ============================================ */
+.navbar {
+  background: var(--dark-gradient) !important;
+  box-shadow: var(--shadow-md);
+  transition: var(--transition-base);
+  padding: 0.75rem 1rem;
+}
+
+.navbar:hover {
+  box-shadow: var(--shadow-lg);
+}
+
+.navbar-brand {
+  font-weight: 700;
+  font-size: 1.5rem;
+  letter-spacing: 0.5px;
+  transition: var(--transition-base);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.navbar-brand:hover {
+  transform: scale(1.05);
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+.nav-link {
+  transition: var(--transition-base);
+  position: relative;
+  padding: 0.5rem 1rem !important;
+  border-radius: 4px;
+  margin: 0 0.25rem;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 50%;
+  background: #fff;
+  transition: var(--transition-base);
+  transform: translateX(-50%);
+}
+
+.nav-link:hover::after {
+  width: 80%;
+}
+
+.nav-link:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-2px);
+}
+
+/* ============================================
+   Sidebar Enhancements
+   ============================================ */
+.sidebar {
+  background: linear-gradient(180deg, #2c3e50 0%, #34495e 100%);
+  box-shadow: var(--shadow-lg);
+  transition: var(--transition-base);
+}
+
+.sidebar .nav-item {
+  margin: 0.25rem 0;
+}
+
+.sidebar .nav-link {
+  color: rgba(255, 255, 255, 0.8);
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  margin: 0.25rem 0.5rem;
+  transition: var(--transition-base);
+  position: relative;
+  overflow: hidden;
+}
+
+.sidebar .nav-link::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  transition: var(--transition-slow);
+}
+
+.sidebar .nav-link:hover::before {
+  left: 100%;
+}
+
+.sidebar .nav-link:hover {
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+  transform: translateX(5px);
+  box-shadow: var(--shadow-md);
+}
+
+.sidebar .nav-link:active {
+  transform: translateX(3px) scale(0.98);
+}
+
+/* ============================================
+   Card Enhancements
+   ============================================ */
+.card {
+  border: none;
+  border-radius: 12px;
+  box-shadow: var(--shadow-md);
+  transition: var(--transition-base);
+  overflow: hidden;
+  background: #fff;
+  position: relative;
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--primary-gradient);
+  transform: scaleX(0);
+  transition: var(--transition-base);
+  transform-origin: left;
+}
+
+.card:hover::before {
+  transform: scaleX(1);
+}
+
+.card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: var(--shadow-xl);
+}
+
+.card-img-top {
+  transition: var(--transition-base);
+}
+
+.card:hover .card-img-top {
+  transform: scale(1.1);
+}
+
+.card-body {
+  padding: 1.5rem;
+}
+
+.card-title {
+  font-weight: 600;
+  color: #2c3e50;
+  margin-bottom: 0.75rem;
+}
+
+.card-text {
+  color: #6c757d;
+  line-height: 1.6;
+}
+
+.card-footer {
+  background: linear-gradient(135deg, #f5f7fa 0%, #ffffff 100%);
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+  padding: 1rem 1.5rem;
+}
+
+/* ============================================
+   Button Enhancements
+   ============================================ */
+.btn {
+  border-radius: 8px;
+  font-weight: 500;
+  padding: 0.6rem 1.5rem;
+  transition: var(--transition-base);
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  border: none;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-size: 0.875rem;
+}
+
+.btn::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+.btn:active::before {
+  width: 300px;
+  height: 300px;
+}
+
+.btn-primary {
+  background: var(--primary-gradient);
+  color: #fff;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+  background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+}
+
+.btn-primary:active {
+  transform: translateY(0) scale(0.98);
+  box-shadow: var(--shadow-sm);
+}
+
+.btn-secondary {
+  background: linear-gradient(135deg, #6c757d 0%, #5a6268 100%);
+  color: #fff;
+}
+
+.btn-secondary:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+  background: linear-gradient(135deg, #5a6268 0%, #6c757d 100%);
+}
+
+.btn-secondary:active {
+  transform: translateY(0) scale(0.98);
+}
+
+.btn-success {
+  background: var(--success-gradient);
+  color: #fff;
+}
+
+.btn-success:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+.btn-success:active {
+  transform: translateY(0) scale(0.98);
+}
+
+.btn-danger {
+  background: var(--secondary-gradient);
+  color: #fff;
+}
+
+.btn-danger:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+.btn-danger:active {
+  transform: translateY(0) scale(0.98);
+}
+
+/* ============================================
+   Form Enhancements
+   ============================================ */
+.form-control {
+  border-radius: 8px;
+  border: 2px solid #e0e0e0;
+  padding: 0.75rem 1rem;
+  transition: var(--transition-base);
+  background: #fff;
+}
+
+.form-control:focus {
+  border-color: #667eea;
+  box-shadow: 0 0 0 0.2rem rgba(102, 126, 234, 0.25);
+  transform: translateY(-2px);
+  outline: none;
+}
+
+.form-control:hover {
+  border-color: #b0b0b0;
+}
+
+.form-label,
+.col-form-label {
+  font-weight: 500;
+  color: #2c3e50;
+  margin-bottom: 0.5rem;
+}
+
+/* ============================================
+   Modal Enhancements
+   ============================================ */
+.modal-content {
+  border-radius: 16px;
+  border: none;
+  box-shadow: var(--shadow-xl);
+  overflow: hidden;
+}
+
+.modal-header {
+  background: var(--primary-gradient);
+  color: #fff;
+  border-bottom: none;
+  padding: 1.5rem;
+}
+
+.modal-title {
+  font-weight: 600;
+  font-size: 1.25rem;
+}
+
+.modal-body {
+  padding: 1.5rem;
+  color: #495057;
+}
+
+.modal-footer {
+  border-top: 1px solid #e9ecef;
+  padding: 1rem 1.5rem;
+  background: #f8f9fa;
+}
+
+.modal .close {
+  color: #fff;
+  opacity: 0.9;
+  transition: var(--transition-base);
+  text-shadow: none;
+}
+
+.modal .close:hover {
+  opacity: 1;
+  transform: rotate(90deg) scale(1.1);
+}
+
+/* ============================================
+   Jumbotron Enhancements
+   ============================================ */
+.jumbotron {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: #fff;
+  border-radius: 16px;
+  box-shadow: var(--shadow-lg);
+  padding: 3rem 2rem;
+  margin-top: 2rem !important;
+  position: relative;
+  overflow: hidden;
+}
+
+.jumbotron::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+  animation: pulse 15s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.5;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.8;
+  }
+}
+
+.jumbotron h1 {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  position: relative;
+  z-index: 1;
+}
+
+/* ============================================
+   Scroll to Top Button
+   ============================================ */
+.scroll-to-top {
+  background: var(--primary-gradient);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-lg);
+  transition: var(--transition-base);
+  color: #fff;
+}
+
+.scroll-to-top:hover {
+  transform: translateY(-5px) scale(1.1);
+  box-shadow: var(--shadow-xl);
+}
+
+.scroll-to-top:active {
+  transform: translateY(-3px) scale(1.05);
+}
+
+/* ============================================
+   Table Enhancements
+   ============================================ */
+.table {
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+
+.table thead {
+  background: var(--dark-gradient);
+  color: #fff;
+}
+
+.table tbody tr {
+  transition: var(--transition-fast);
+}
+
+.table tbody tr:hover {
+  background: rgba(102, 126, 234, 0.1);
+  transform: scale(1.01);
+}
+
+/* ============================================
+   Animations
+   ============================================ */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.6s ease-out;
+}
+
+.slide-in {
+  animation: slideIn 0.6s ease-out;
+}
+
+/* ============================================
+   Responsive Enhancements
+   ============================================ */
+@media (max-width: 768px) {
+  .card:hover {
+    transform: translateY(-4px) scale(1.01);
+  }
+  
+  .btn {
+    padding: 0.5rem 1.25rem;
+    font-size: 0.8rem;
+  }
+  
+  .jumbotron {
+    padding: 2rem 1.5rem;
+  }
+}
+
+/* ============================================
+   Loading States
+   ============================================ */
+.loading {
+  position: relative;
+  pointer-events: none;
+  opacity: 0.6;
+}
+
+.loading::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 20px;
+  height: 20px;
+  margin: -10px 0 0 -10px;
+  border: 3px solid #f3f3f3;
+  border-top: 3px solid #667eea;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* ============================================
+   Additional Utility Classes
+   ============================================ */
+.shadow-hover {
+  transition: var(--transition-base);
+}
+
+.shadow-hover:hover {
+  box-shadow: var(--shadow-xl);
+}
+
+.scale-hover {
+  transition: var(--transition-base);
+}
+
+.scale-hover:hover {
+  transform: scale(1.05);
+}
+
+.glow {
+  box-shadow: 0 0 20px rgba(102, 126, 234, 0.3);
+}
+
+.glow:hover {
+  box-shadow: 0 0 30px rgba(102, 126, 234, 0.5);
+}
+
+
