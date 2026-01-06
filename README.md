@@ -58,39 +58,21 @@ End Date: End Date of Attendance period
 This will delete all present attendance data and create new attendance objects for the given time range. 
 
 ## Screenshots
+### Login Page
+<img width="1918" height="971" alt="Screenshot 2026-01-06 224730" src="https://github.com/user-attachments/assets/e4f6ecf8-498f-4bd5-a7d8-a55d4a8282d1" />
 
 ### Teacher Page
-
-![alt text](https://imgur.com/pMAoEbG.png)
-
-![alt text](https://imgur.com/ZiQ3RRA.png)
-
-![alt text](https://imgur.com/i025CJW.png)
-
-![alt text](https://imgur.com/HQlLYmC.png)
-
-![alt text](https://imgur.com/j6RyBmU.png)
-
-![alt text](https://imgur.com/xIKEMvQ.png)
-
-![alt text](https://imgur.com/4Rl7Fpv.png)
+<img width="1919" height="974" alt="image" src="https://github.com/user-attachments/assets/65127382-5e0b-4818-9f4f-a491a848950a" />
+<img width="1918" height="972" alt="Screenshot 2026-01-06 225410" src="https://github.com/user-attachments/assets/99c92da3-eb96-4b09-b449-ec3707c03831" />
+<img width="1918" height="968" alt="teacher marks" src="https://github.com/user-attachments/assets/d871bdc0-ed6d-4748-800b-2de3003ccda8" />
 
 ### Student Page
-
-![alt text](https://imgur.com/isL9cjz.png)
-
-![alt text](https://imgur.com/5pzl7m3.png)
-
-![alt text](https://imgur.com/7zWhHZx.png)
-
-![alt text](https://imgur.com/fu7gxk8.png)
-
-![alt text](https://imgur.com/NZqU268.png)
+<img width="1918" height="972" alt="Screenshot 2026-01-06 224819" src="https://github.com/user-attachments/assets/2566258c-e4ae-4708-ad7a-3b7312176f36" />
+<img width="1918" height="971" alt="timetable" src="https://github.com/user-attachments/assets/ac6544a4-1bd7-4b75-bb41-a3fe0b32d569" />
 
 ### Admin Page
 
-![alt text](https://imgur.com/sDvDc9N.png)
+<img width="1255" height="617" alt="image" src="https://github.com/user-attachments/assets/2c7eb1ba-bf8f-4245-b88c-f24c9fec5b36" />
+<img width="1633" height="800" alt="image" src="https://github.com/user-attachments/assets/a25840ad-4824-4251-ab19-dd9c263d94b7" />
+<img width="1632" height="793" alt="image" src="https://github.com/user-attachments/assets/aa98b484-0769-41dd-942a-699d879c2682" />
 
-![alt text](https://imgur.com/tMKWx6f.png)
-
-![alt text](https://imgur.com/PvCsNeB.png)
